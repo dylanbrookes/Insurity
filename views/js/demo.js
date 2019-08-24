@@ -95,10 +95,12 @@ let fn = () => {
 				let score = aggregateScore(resp.FaceDetails[0]);
 				console.log(resp.FaceDetails[0]);
 				console.log(score);
-				scores.push({
+				let s = {
 					...score,
 					faceDetails: resp.FaceDetails[0]
-				});
+				};
+				scores.push(s);
+				if (typeof window.dataHook == 'function') window.dataHook(s);
 
 				let gender = resp.FaceDetails[0].Gender.Value.toLowerCase();
 				let smile = resp.FaceDetails[0].Smile.Value;
