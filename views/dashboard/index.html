@@ -199,14 +199,81 @@
                   <div class="card-body p-0 d-flex">
                     <div class="d-flex flex-column m-auto">
                       <div class="stats-small__data text-center" style="height:5px;">
-                        <span class="stats-small__label text-uppercase">Risk-Taking Activity</span>
-                        <h6 class="stats-small__value count my-3">10%</h6>
+                        <span class="stats-small__label text-uppercase">Distracted Driving</span>
+                        <h6 class="stats-small__value count my-3" id="distracted-value">0%</h6>
                       </div>
                       <!--div class="stats-small__data">
                         <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
                       </div-->
                     </div>
-                    <canvas height="120" class="blog-overview-stats-small-1"></canvas>
+                    <canvas height="120" class="distracted-chart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 mb-4 ml-auto">
+                <div class="stats-small stats-small--1 card card-small">
+                  <div class="card-body p-0 d-flex">
+                    <div class="d-flex flex-column m-auto">
+                      <div class="stats-small__data text-center" style="height:5px;">
+                        <span class="stats-small__label text-uppercase">Focused</span>
+                        <h6 class="stats-small__value count my-3" id="focused-value">-</h6>
+                      </div>
+                      <!--div class="stats-small__data">
+                        <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
+                      </div-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 mb-4">
+                <div class="stats-small stats-small--1 card card-small">
+                  <div class="card-body p-0 d-flex">
+                    <div class="d-flex flex-column m-auto">
+                      <div class="stats-small__data text-center" style="height:5px;">
+                        <span class="stats-small__label text-uppercase">Talking</span>
+                        <h6 class="stats-small__value count my-3" id="talking-value">-</h6>
+                      </div>
+                      <!--div class="stats-small__data">
+                        <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
+                      </div-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 mb-4 mr-auto">
+                <div class="stats-small stats-small--1 card card-small">
+                  <div class="card-body p-0 d-flex">
+                    <div class="d-flex flex-column m-auto">
+                      <div class="stats-small__data text-center" style="height:5px;">
+                        <span class="stats-small__label text-uppercase">Eyes Open</span>
+                        <h6 class="stats-small__value count my-3" id="eyes-value">-</h6>
+                      </div>
+                      <!--div class="stats-small__data">
+                        <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
+                      </div-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="row">
+              <div class="col-lg col-md-12 col-sm-6 mb-2">
+                <div class="stats-small stats-small--1 card card-small">
+                  <div class="card-body p-0 d-flex">
+                    <div class="d-flex flex-column m-auto">
+                      <div class="stats-small__data text-center" style="height:5px;">
+                        <span class="stats-small__label text-uppercase">Risk-Taking Activity</span>
+                        <h6 class="stats-small__value count my-3" id="risk-taking-value">0%</h6>
+                      </div>
+                      <!--div class="stats-small__data">
+                        <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
+                      </div-->
+                    </div>
+                    <canvas height="120" class="risk-taking-chart"></canvas>
                   </div>
                 </div>
               </div>
@@ -218,13 +285,12 @@
                     <div class="d-flex flex-column m-auto">
                       <div class="stats-small__data text-center" style="height:5px;">
                         <span class="stats-small__label text-uppercase">Glasses</span>
-                        <h6 class="stats-small__value count my-3">On</h6>
+                        <h6 class="stats-small__value count my-3" id="glasses-value">-</h6>
                       </div>
                       <!--div class="stats-small__data">
                         <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
                       </div-->
                     </div>
-                    <canvas height="120" class="blog-overview-stats-small-1"></canvas>
                   </div>
                 </div>
               </div>
@@ -234,13 +300,12 @@
                     <div class="d-flex flex-column m-auto">
                       <div class="stats-small__data text-center" style="height:5px;">
                         <span class="stats-small__label text-uppercase">Emotions</span>
-                        <h6 class="stats-small__value count my-3">Happy</h6>
+                        <h6 class="stats-small__value count my-3" id="mood-value">-</h6>
                       </div>
                       <!--div class="stats-small__data">
                         <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
                       </div-->
                     </div>
-                    <canvas height="120" class="blog-overview-stats-small-1"></canvas>
                   </div>
                 </div>
               </div>
@@ -250,83 +315,12 @@
                     <div class="d-flex flex-column m-auto">
                       <div class="stats-small__data text-center" style="height:5px;">
                         <span class="stats-small__label text-uppercase">Trip Length</span>
-                        <h6 class="stats-small__value count my-3">20 mins</h6>
+                        <h6 class="stats-small__value count my-3" id="trip-len-value">0s</h6>
                       </div>
                       <!--div class="stats-small__data">
                         <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
                       </div-->
                     </div>
-                    <canvas height="120" class="blog-overview-stats-small-1"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="row">
-              <div class="col-lg col-md-12 col-sm-6 mb-2">
-                <div class="stats-small stats-small--1 card card-small">
-                  <div class="card-body p-0 d-flex">
-                    <div class="d-flex flex-column m-auto">
-                      <div class="stats-small__data text-center" style="height:5px;">
-                        <span class="stats-small__label text-uppercase">Distracted Driving</span>
-                        <h6 class="stats-small__value count my-3">44%</h6>
-                      </div>
-                      <!--div class="stats-small__data">
-                        <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
-                      </div-->
-                    </div>
-                    <canvas height="120" class="blog-overview-stats-small-2"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-3 mb-4 ml-auto">
-                <div class="stats-small stats-small--1 card card-small">
-                  <div class="card-body p-0 d-flex">
-                    <div class="d-flex flex-column m-auto">
-                      <div class="stats-small__data text-center" style="height:5px;">
-                        <span class="stats-small__label text-uppercase">Focus</span>
-                        <h6 class="stats-small__value count my-3">5%</h6>
-                      </div>
-                      <!--div class="stats-small__data">
-                        <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
-                      </div-->
-                    </div>
-                    <canvas height="120" class="blog-overview-stats-small-1"></canvas>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 mb-4">
-                <div class="stats-small stats-small--1 card card-small">
-                  <div class="card-body p-0 d-flex">
-                    <div class="d-flex flex-column m-auto">
-                      <div class="stats-small__data text-center" style="height:5px;">
-                        <span class="stats-small__label text-uppercase">Talking</span>
-                        <h6 class="stats-small__value count my-3">No</h6>
-                      </div>
-                      <!--div class="stats-small__data">
-                        <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
-                      </div-->
-                    </div>
-                    <canvas height="120" class="blog-overview-stats-small-1"></canvas>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 mb-4 mr-auto">
-                <div class="stats-small stats-small--1 card card-small">
-                  <div class="card-body p-0 d-flex">
-                    <div class="d-flex flex-column m-auto">
-                      <div class="stats-small__data text-center" style="height:5px;">
-                        <span class="stats-small__label text-uppercase">Eyes Open</span>
-                        <h6 class="stats-small__value count my-3">Yes</h6>
-                      </div>
-                      <!--div class="stats-small__data">
-                        <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
-                      </div-->
-                    </div>
-                    <canvas height="120" class="blog-overview-stats-small-1"></canvas>
                   </div>
                 </div>
               </div>
