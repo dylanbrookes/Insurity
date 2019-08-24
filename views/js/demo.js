@@ -35,11 +35,11 @@ const aggregateScore = (faceDetails) => {
 		score.distraction += 2;
 	}
 	
-	if (faceDetails.MouthOpen.Value && faceDetails.MouthOpen.Confidence >= 85) {
+	if (faceDetails.MouthOpen.Value && faceDetails.MouthOpen.Confidence >= 50) {
 		score.distraction++;
 	}
 
-	if (!faceDetails.EyesOpen.Value && faceDetails.EyesOpen.Confidence >= 90) {
+	if (!faceDetails.EyesOpen.Value && faceDetails.EyesOpen.Confidence >= 70) {
 		score.distraction++;
 	}
 
@@ -51,6 +51,23 @@ const aggregateScore = (faceDetails) => {
 let fn = () => {
 	const video = document.querySelector('video');
 	const canvas = document.createElement('canvas');
+	let insightDataStr = window.localStorage.getItem('insights');
+	let insightData = insightDataStr? JSON.parse(insightDataStr) : {
+		gender: {
+			male: 0, female: 0
+		},
+		emotion: {
+			happy: 0,
+			disgusted: 0,
+			calm: 0,
+			angry: 0,
+			sad: 0,
+			confused: 0,
+			fear: 0,
+			surprised: 0
+		},
+		smile: { yes: 0, no: 0 }
+	};
 
 	navigator.mediaDevices.getUserMedia({ video: true})
 		.then((stream) => {video.srcObject = stream});
@@ -63,7 +80,7 @@ let fn = () => {
 
 	}
 
-	setTimeout(() => {
+	setInterval(() => {
 		let img = takeScreenshot();
 		fetch('/face/sample', {
 			method: 'POST',
@@ -78,7 +95,26 @@ let fn = () => {
 				let score = aggregateScore(resp.FaceDetails[0]);
 				console.log(resp.FaceDetails[0]);
 				console.log(score);
-				scores.push(score);
+				scores.push({
+					...score,
+					faceDetails: resp.FaceDetails[0]
+				});
+
+				let gender = resp.FaceDetails[0].Gender.Value.toLowerCase();
+				let smile = resp.FaceDetails[0].Smile.Value;
+				let mood = null;
+				let maxConfidence = 0;
+				for (let i = 0; i < resp.FaceDetails[0].Emotions.length; i++) {
+					let emotion = resp.FaceDetails[0].Emotions[i];
+					if (emotion.Confidence > maxConfidence) mood = emotion.Type.toLowerCase();
+				}
+
+				insightData.gender[gender]++;
+				insightData.smile[smile? 'yes':'no']++;
+				insightData.emotion[mood]++;
+
+				console.log(insightData);
+				window.localStorage.setItem('insights', JSON.stringify(insightData));
 			}
 		});
 	}, SCREENSHOT_INTERVAL * 1000);
