@@ -14,6 +14,10 @@ router.get('/dashboard', function(req, res, next) {
   res.render('dashboard', { layout: false, title: 'Dashboard' });
 });
 
+router.get('/dashboard/insights', function(req, res, next) {
+  res.render('dashboard/insights', { layout: false, title: 'Insights' });
+});
+
 
 
 module.exports = router;
