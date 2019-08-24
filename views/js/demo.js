@@ -24,7 +24,12 @@ let fn = () => {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({ img })
-		}).then(() => console.log("Sent screenshot!"));
+		})
+		.then((resp) => resp.json())
+		.then((resp) => {
+			console.log("Sent screenshot!");
+			console.log(resp);
+		});
 	}, SCREENSHOT_INTERVAL * 1000);
 };
 
