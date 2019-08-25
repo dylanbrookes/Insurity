@@ -21,33 +21,36 @@
 </head>
 
 <body>
+<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-
-
+<div style="z-index: 1; position: absolute; width: 100%; height: 100%;" id="particles-js"></div>
+<script>
+	particlesJS.load("particles-js", 'assets/particles.json');
+</script>
+ 
 	<!--================Home Banner Area =================-->
 	<section class="home_banner_area" style="margin-top: -100px;">
 		<div class="banner_inner" style="margin-top: -100px;">
 			<div class="container">
-				<div class="row">
+				<div class="row" >
 					<div class="col-lg-6">
-						<div class="banner_content" style="padding-top: 250px;">
+						<div class="banner_content" style="padding-top: 200px;">
 							<img src="img/logo.png" style="width: 300px;"/>
 							
 							<h2>
-								Insure With Confidence
+								Real-Time Vehicle Insurance Risk Prediction
 							</h2>
-							<p>
-								Insurity uses advanced computer vision to identify 
+							<p style="font-size: 16px; margin-top: -10px;">
+								Insurity uses advanced computer vision to identify the lowest risk drivers
 								<br/>
-								the lowest risk drivers for insurers
+								for insurers in real-time. Usage based insurance (UBI) just got a lot more accurate.
 							</p>
 							<div class="d-flex align-items-center">
-									<a class="primary_btn" href="/dashboard"><span>View Demo</span></a>
+									<a class="primary_btn" href="/dashboard" style="z-index: 2; position: absolute; margin-top: 20px;"><span>View Demo</span></a>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-6">
-						
 						<div class="home_right_img" style="width: 600px;">
 							<img class="img-fluid"  src="img/banner/home-right.png" alt="">
 						</div>
